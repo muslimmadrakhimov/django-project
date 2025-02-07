@@ -30,5 +30,6 @@ def home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('task2/', include('task2.urls')),
+    path('', include('task3.urls')),
     path('', home),  # Главная страница
 ]
