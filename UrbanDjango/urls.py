@@ -15,8 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+
+
+
+# Функция для главной страницы
+def home(request):
+    return HttpResponse("<h1>Добро пожаловать в UrbanDjango!</h1>")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('task2/', include('task2.urls')),
+    path('', home),  # Главная страница
 ]
